@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Premium Developer Portfolio - Harsh Vaishnani
 
 A modern, high-performance portfolio website built with cutting-edge technologies for a senior MERN Stack and Shopify developer.
@@ -112,7 +113,6 @@ Customize the color scheme in `/app/globals.css`:
 - Secondary: Purple (#a855f7)
 - Accents: Gray shades
 
-### Animations
 Adjust animation timings in individual component files using Framer Motion props:
 - `duration`: Animation length
 - `delay`: Stagger delay
@@ -155,6 +155,45 @@ export async function POST(request) {
 1. Push your code to GitHub
 2. Connect to Vercel: https://vercel.com
 3. Select your repository
+ # Premium Developer Portfolio - Harsh Vaishnani
+
+ A modern, high-performance portfolio website built with cutting-edge technologies for a senior MERN Stack and Shopify developer.
+
+ ## Features
+
+ ### 🎨 Design & UX
+ - **Dark Professional Theme**: Black background with elegant white and blue accents
+ - **Glassmorphism Cards**: Modern UI components with frosted glass effect
+ - **Responsive Design**: Fully responsive across mobile, tablet, and desktop
+ - **Smooth Animations**: Scroll-triggered reveals and hover micro-interactions
+ - **Custom Cursor Light**: Interactive cursor-following glow effect
+
+ ### 📄 Pages
+ 1. **Home Page** - Hero section with animated name and professional intro
+ 2. **About Page** - Professional summary and developer approach
+ 3. **Skills Page** - Categorized technical skills with proficiency levels
+ 4. **Experience Page** - Timeline-style work experience and education
+ 5. **Projects Page** - Featured projects with tech stack and links
+ 6. **Resume Page** - Professional resume with download functionality
+ 7. **Contact Page** - Contact form with multiple communication methods
+
+ ### 🚀 Performance & SEO
+ - Next.js 16 with App Router for optimal performance
+ - Lazy loading and image optimization
+ - SEO-optimized meta tags and Open Graph support
+ - Fast page transitions and smooth scrolling
+
+ ### 🛠 Tech Stack
+ - **Framework**: Next.js 16 (App Router)
+ - **Language**: JavaScript (ES6+ only, no TypeScript)
+ - **Styling**: Tailwind CSS v4
+ - **Animations**: Framer Motion, GSAP
+ - **API Routes**: Node.js-based contact form handling
+ - **Database**: MongoDB-ready schema for contact submissions
+
+ ## Getting Started
+
+ ### Prerequisites
 4. Add environment variables if needed
 5. Deploy!
 
@@ -235,3 +274,6 @@ For issues or questions:
 ---
 
 **Designed & Built** for creating a premium developer portfolio that stands out in the job market.
+=======
+# Harsh_Porfolio
+>>>>>>> b6e1d49922f3ffec9f697dbf5e3abe463728564e
