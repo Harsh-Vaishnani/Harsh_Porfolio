@@ -81,41 +81,198 @@ export default function Home() {
             </motion.div>
           </motion.div>
 
-          {/* Right: Profile Picture */}
+          {/* Right: Profile Picture - 3D Professional Design */}
           <div className="md:basis-[30%] basis-full flex items-center justify-center relative">
-            <div className="relative">
-              <img
-                src="/harsh-portfolio-image.jpeg"
-                alt="Professional Hero"
-                className="w-[320px] h-[320px] md:w-[400px] md:h-[400px] object-cover rounded-full border-4 border-white/10 shadow-xl z-10"
-                style={{ filter: 'blur(0px)' }}
-              />
-              {/* Animated Backgrounds */}
+            <motion.div 
+              className="relative"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              style={{ transformStyle: "preserve-3d" }}
+            >
+              {/* 3D Layered Frame with subtle animation */}
+              <div className="absolute inset-0 w-[320px] h-[320px] md:w-[400px] md:h-[400px]">
+                {/* Back layers for 3D depth */}
+                <motion.div 
+                  className="absolute inset-0 rounded-[40%_60%_60%_40%/60%_40%_60%_40%] bg-gradient-to-br from-blue-600/20 to-purple-600/20 blur-sm" 
+                  style={{ transform: 'translateZ(-40px) scale(1.1)' }}
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                />
+                <motion.div 
+                  className="absolute inset-0 rounded-[60%_40%_40%_60%/40%_60%_40%_60%] bg-gradient-to-tr from-purple-600/15 to-blue-600/15 blur-sm" 
+                  style={{ transform: 'translateZ(-30px) scale(1.08)' }}
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+                />
+                <motion.div 
+                  className="absolute inset-0 rounded-[45%_55%_55%_45%/55%_45%_55%_45%] bg-gradient-to-bl from-blue-500/10 to-purple-500/10" 
+                  style={{ transform: 'translateZ(-20px) scale(1.05)' }}
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                />
+              </div>
+
+              {/* Main Image Container with Unique Shape */}
+              <motion.div 
+                className="relative w-[320px] h-[320px] md:w-[400px] md:h-[400px]" 
+                style={{ transformStyle: "preserve-3d" }}
+              >
+                {/* Outer Glow Ring with pulse */}
+                <motion.div 
+                  className="absolute inset-0 rounded-[50%_50%_55%_45%/55%_45%_50%_50%] bg-gradient-to-r from-blue-500 to-purple-500 blur-xl"
+                  animate={{ 
+                    opacity: [0.2, 0.4, 0.2],
+                    scale: [1, 1.05, 1]
+                  }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                />
+                
+                {/* Middle Frame */}
+                <motion.div 
+                  className="absolute inset-2 rounded-[50%_50%_55%_45%/55%_45%_50%_50%] bg-gradient-to-br from-blue-500/40 to-purple-500/40 backdrop-blur-sm" 
+                  style={{ transform: 'translateZ(10px)' }}
+                />
+                
+                {/* Inner Frame with Border */}
+                <motion.div 
+                  className="absolute inset-4 rounded-[50%_50%_55%_45%/55%_45%_50%_50%] border-2 border-white/20 bg-black/20" 
+                  style={{ transform: 'translateZ(20px)' }}
+                />
+                
+                {/* Image with Unique Organic Shape */}
+                <div 
+                  className="absolute inset-6 overflow-hidden rounded-[50%_50%_55%_45%/55%_45%_50%_50%]"
+                  style={{ transform: 'translateZ(30px)' }}
+                >
+                  <img
+                    src="/harsh-image.png"
+                    alt="Professional Hero"
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Image Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-purple-500/10" />
+                </div>
+
+                {/* Front Accent Lines with shimmer effect */}
+                <motion.div 
+                  className="absolute inset-0 rounded-[50%_50%_55%_45%/55%_45%_50%_50%] border border-white/10" 
+                  style={{ transform: 'translateZ(40px)' }}
+                  animate={{ 
+                    borderColor: ["rgba(255,255,255,0.1)", "rgba(59,130,246,0.3)", "rgba(255,255,255,0.1)"]
+                  }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                />
+                
+                {/* Professional Orbital Particles */}
+                {[...Array(12)].map((_, i) => {
+                  const angle = (i * 360) / 12;
+                  const radius = 160;
+                  const x = Math.cos((angle * Math.PI) / 180) * radius;
+                  const y = Math.sin((angle * Math.PI) / 180) * radius;
+                  
+                  return (
+                    <motion.div
+                      key={i}
+                      className="absolute w-2 h-2 rounded-full"
+                      style={{
+                        left: '50%',
+                        top: '50%',
+                        background: i % 3 === 0 
+                          ? 'linear-gradient(135deg, #3b82f6, #8b5cf6)' 
+                          : i % 3 === 1 
+                          ? 'linear-gradient(135deg, #8b5cf6, #ec4899)'
+                          : 'linear-gradient(135deg, #06b6d4, #3b82f6)',
+                        boxShadow: '0 0 10px rgba(59, 130, 246, 0.5)',
+                      }}
+                      animate={{
+                        x: [x, x * 1.2, x],
+                        y: [y, y * 1.2, y],
+                        scale: [1, 1.5, 1],
+                        opacity: [0.3, 1, 0.3],
+                      }}
+                      transition={{
+                        duration: 3 + (i * 0.2),
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: i * 0.1,
+                      }}
+                    />
+                  );
+                })}
+
+                {/* Floating Tech Icons/Particles */}
+                {[
+                  { icon: '⚡', delay: 0, duration: 6 },
+                  { icon: '💻', delay: 1, duration: 7 },
+                  { icon: '🚀', delay: 2, duration: 8 },
+                  { icon: '⭐', delay: 3, duration: 6.5 },
+                  { icon: '✨', delay: 4, duration: 7.5 },
+                ].map((item, i) => (
+                  <motion.div
+                    key={`tech-${i}`}
+                    className="absolute text-2xl opacity-0"
+                    style={{
+                      left: `${20 + i * 15}%`,
+                      top: `${10 + (i % 2) * 70}%`,
+                    }}
+                    animate={{
+                      y: [0, -30, 0],
+                      x: [0, 15, 0],
+                      opacity: [0, 0.6, 0],
+                      scale: [0.5, 1, 0.5],
+                      rotate: [0, 180, 360],
+                    }}
+                    transition={{
+                      duration: item.duration,
+                      repeat: Infinity,
+                      delay: item.delay,
+                      ease: "easeInOut",
+                    }}
+                  >
+                    {item.icon}
+                  </motion.div>
+                ))}
+              </motion.div>
+
+              {/* Animated Backgrounds with professional movements */}
               <motion.div
-                className="absolute top-1/4 left-1/4 w-60 h-60 md:w-96 md:h-96 bg-blue-500/20 rounded-full blur-3xl z-0"
+                className="absolute top-1/4 left-1/4 w-60 h-60 md:w-96 md:h-96 bg-blue-500/20 rounded-full blur-3xl" 
+                style={{ transform: 'translateZ(-60px)' }}
                 animate={{
-                  x: [0, 50, -50, 0],
-                  y: [0, 50, -50, 0],
+                  x: [0, 30, -30, 0],
+                  y: [0, 40, -20, 0],
+                  scale: [1, 1.15, 1],
                 }}
                 transition={{
-                  duration: 20,
+                  duration: 15,
                   repeat: Infinity,
-                  ease: 'easeInOut',
+                  ease: "easeInOut",
                 }}
               />
               <motion.div
-                className="absolute bottom-1/4 right-1/4 w-60 h-60 md:w-96 md:h-96 bg-purple-500/10 rounded-full blur-3xl z-0"
+                className="absolute bottom-1/4 right-1/4 w-60 h-60 md:w-96 md:h-96 bg-purple-500/10 rounded-full blur-3xl" 
+                style={{ transform: 'translateZ(-50px)' }}
                 animate={{
-                  x: [0, -50, 50, 0],
-                  y: [0, -50, 50, 0],
+                  x: [0, -40, 40, 0],
+                  y: [0, -30, 30, 0],
+                  scale: [1, 1.1, 1],
                 }}
                 transition={{
-                  duration: 25,
+                  duration: 18,
                   repeat: Infinity,
-                  ease: 'easeInOut',
+                  ease: "easeInOut",
                 }}
               />
-            </div>
+
+              {/* Rotating Ring Effect */}
+              <motion.div
+                className="absolute inset-0 w-[320px] h-[320px] md:w-[400px] md:h-[400px] rounded-full border border-blue-500/20"
+                style={{ transform: 'translateZ(50px)' }}
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              />
+            </motion.div>
           </div>
         </div>
 
