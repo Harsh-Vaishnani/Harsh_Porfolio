@@ -32,8 +32,13 @@ export default function Footer() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Link href="/" className="text-2xl font-bold text-blue-400 hover:text-blue-300 transition-colors">
-              HV
+            <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+              <img
+                src="/HV-Logo-1.png"
+                alt="HV Logo"
+                className="h-15 w-auto mix-blend-lighten"
+                style={{ filter: 'brightness(1.2) contrast(1.1)' }}
+              />
             </Link>
             <p className="text-gray-400 mt-3 leading-relaxed">
               Building scalable and performant web applications that drive business value.
@@ -54,6 +59,7 @@ export default function Footer() {
                   key={link.href}
                   href={link.href}
                   className="text-gray-400 hover:text-blue-400 transition-colors inline-block"
+                  style={{ paddingInline: '5px' }}
                 >
                   {link.label}
                 </Link>
