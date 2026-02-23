@@ -81,41 +81,53 @@ export default function Home() {
             </motion.div>
           </motion.div>
 
-          {/* Right: Profile Picture */}
+          {/* Right: Profile Picture - 3D Professional Design */}
           <div className="md:basis-[30%] basis-full flex items-center justify-center relative">
             <div className="relative">
               <img
-                src="/harsh-portfolio-iamge-1.jpeg"
+                src="/harsh-portfolio-image.jpeg"
                 alt="Professional Hero"
                 className="w-[320px] h-[320px] md:w-[400px] md:h-[400px] object-cover rounded-full border-4 border-white/10 shadow-xl z-10"
                 style={{ filter: 'blur(0px)' }}
               />
               {/* Animated Backgrounds */}
               <motion.div
-                className="absolute top-1/4 left-1/4 w-60 h-60 md:w-96 md:h-96 bg-blue-500/20 rounded-full blur-3xl z-0"
+                className="absolute top-1/4 left-1/4 w-60 h-60 md:w-96 md:h-96 bg-blue-500/20 rounded-full blur-3xl" 
+                style={{ transform: 'translateZ(-60px)' }}
                 animate={{
-                  x: [0, 50, -50, 0],
-                  y: [0, 50, -50, 0],
+                  x: [0, 30, -30, 0],
+                  y: [0, 40, -20, 0],
+                  scale: [1, 1.15, 1],
                 }}
                 transition={{
-                  duration: 20,
+                  duration: 15,
                   repeat: Infinity,
-                  ease: 'easeInOut',
+                  ease: "easeInOut",
                 }}
               />
               <motion.div
-                className="absolute bottom-1/4 right-1/4 w-60 h-60 md:w-96 md:h-96 bg-purple-500/10 rounded-full blur-3xl z-0"
+                className="absolute bottom-1/4 right-1/4 w-60 h-60 md:w-96 md:h-96 bg-purple-500/10 rounded-full blur-3xl" 
+                style={{ transform: 'translateZ(-50px)' }}
                 animate={{
-                  x: [0, -50, 50, 0],
-                  y: [0, -50, 50, 0],
+                  x: [0, -40, 40, 0],
+                  y: [0, -30, 30, 0],
+                  scale: [1, 1.1, 1],
                 }}
                 transition={{
-                  duration: 25,
+                  duration: 18,
                   repeat: Infinity,
-                  ease: 'easeInOut',
+                  ease: "easeInOut",
                 }}
               />
-            </div>
+
+              {/* Rotating Ring Effect */}
+              <motion.div
+                className="absolute inset-0 w-[320px] h-[320px] md:w-[400px] md:h-[400px] rounded-full border border-blue-500/20"
+                style={{ transform: 'translateZ(50px)' }}
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              />
+            </motion.div>
           </div>
         </div>
 
