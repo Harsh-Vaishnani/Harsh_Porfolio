@@ -16,9 +16,9 @@ export default function Footer() {
   ]
 
   const socials = [
-    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/harsh-vaishnani' },
-    { label: 'GitHub', url: 'https://github.com/Harsh-Vaishnani' },
-    { label: 'Email', url: 'mailto:vaishnaniharsh8@gmail.com' },
+    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/harsh-vaishnani', icon: <FaLinkedin size={18} /> },
+    { label: 'GitHub', url: 'https://github.com/Harsh-Vaishnani', icon: <FaGithub size={18} /> },
+    { label: 'Email', url: 'mailto:vaishnaniharsh8@gmail.com', icon: <FaEnvelope size={18} /> },
   ]
 
   return (
