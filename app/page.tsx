@@ -151,7 +151,7 @@ export default function Home() {
           {[
             { label: 'Projects Completed', value: '15+' },
             { label: 'Technologies', value: '25+' },
-            { label: 'Years Experience', value: '2+' },
+            { label: 'Years Experience', value: '3+' },
           ].map((stat, index) => (
             <motion.div
               key={index}
