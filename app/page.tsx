@@ -85,7 +85,7 @@ export default function Home() {
           <div className="md:basis-[30%] basis-full flex items-center justify-center relative">
             <div className="relative">
               <img
-                src="/harsh-portfolio-image.jpeg"
+                src="/harsh-portfolio-iamge-1.jpeg"
                 alt="Professional Hero"
                 className="w-[320px] h-[320px] md:w-[400px] md:h-[400px] object-cover rounded-full border-4 border-white/10 shadow-xl z-10"
                 style={{ filter: 'blur(0px)' }}

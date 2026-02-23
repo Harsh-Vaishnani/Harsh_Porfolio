@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa'
 import Link from 'next/link'
 
 export default function Footer() {
@@ -15,9 +16,9 @@ export default function Footer() {
   ]
 
   const socials = [
-    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/harsh-vaishnani' },
-    { label: 'GitHub', url: 'https://github.com/Harsh-Vaishnani' },
-    { label: 'Email', url: 'mailto:vaishnaniharsh8@gmail.com' },
+    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/harsh-vaishnani', icon: <FaLinkedin size={22} /> },
+    { label: 'GitHub', url: 'https://github.com/Harsh-Vaishnani', icon: <FaGithub size={22} /> },
+    { label: 'Email', url: 'mailto:vaishnaniharsh8@gmail.com', icon: <FaEnvelope size={22} /> },
   ]
 
   return (
@@ -48,12 +49,12 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <h3 className="font-semibold text-white mb-4">Quick Links</h3>
-            <div className="space-y-2">
+            <div className="flex flex-wrap gap-x-2 gap-y-2">
               {links.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-gray-400 hover:text-blue-400 transition-colors inline-block"
+                  className="text-gray-400 hover:text-blue-400 transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -88,7 +89,7 @@ export default function Footer() {
                   className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-gray-400 hover:text-blue-400 hover:border-blue-500/50 transition-all"
                   title={social.label}
                 >
-                  {social.label[0]}
+                  {social.icon}
                 </motion.a>
               ))}
             </div>

@@ -4,6 +4,7 @@ import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { FaEnvelope, FaPhoneAlt, FaLinkedin, FaGithub } from 'react-icons/fa'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -50,25 +51,25 @@ export default function Contact() {
 
   const contactMethods = [
     {
-      icon: '📧',
+      icon: <FaEnvelope size={28} className="text-blue-300" />, 
       label: 'Email',
       value: 'vaishnaniharsh8@gmail.com',
       link: 'mailto:vaishnaniharsh8@gmail.com',
     },
     {
-      icon: '📱',
+      icon: <FaPhoneAlt size={28} className="text-purple-300" />, 
       label: 'Phone',
       value: '+91 8849862777',
       link: 'tel:+918849862777',
     },
     {
-      icon: '💼',
+      icon: <FaLinkedin size={28} className="text-blue-500" />, 
       label: 'LinkedIn',
       value: 'linkedin.com/in/harsh-vaishnani',
       link: 'https://www.linkedin.com/in/harsh-vaishnani',
     },
     {
-      icon: '🔗',
+      icon: <FaGithub size={28} className="text-gray-300" />, 
       label: 'GitHub',
       value: 'github.com/Harsh-Vaishnani',
       link: 'https://github.com/Harsh-Vaishnani',
@@ -112,7 +113,7 @@ export default function Contact() {
                     whileHover={{ scale: 1.05, x: 10 }}
                     className="block bg-white/5 border border-white/10 rounded-lg p-6 hover:border-blue-500/50 transition-all group"
                   >
-                    <div className="text-3xl mb-2">{method.icon}</div>
+                    <div className="text-3xl mb-2 flex items-center">{method.icon}</div>
                     <div className="text-sm text-gray-400 mb-1">{method.label}</div>
                     <div className="text-white font-semibold text-sm group-hover:text-blue-400 transition-colors">
                       {method.value}
