@@ -83,13 +83,14 @@ export default function Home() {
 
           {/* Right: Profile Picture - 3D Professional Design */}
           <div className="md:basis-[30%] basis-full flex items-center justify-center relative">
-            <div className="relative">
-              <img
-                src="/harsh-portfolio-iamge-1.jpeg"
-                alt="Professional Hero"
-                className="w-[320px] h-[320px] md:w-[400px] md:h-[400px] object-cover rounded-full border-4 border-white/10 shadow-xl z-10"
-                style={{ filter: 'blur(0px)' }}
-              />
+            <div className="relative w-[320px] h-[320px] md:w-[400px] md:h-[400px]">
+              <div className="w-full h-full rounded-full border-4 border-white/10 shadow-xl overflow-hidden relative z-10">
+                <img
+                  src="/harsh-portfolio-iamge-1.jpeg"
+                  alt="Professional Hero"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
               {/* Animated Backgrounds */}
               <motion.div
                 className="absolute top-1/4 left-1/4 w-60 h-60 md:w-96 md:h-96 bg-blue-500/20 rounded-full blur-3xl" 
@@ -122,7 +123,7 @@ export default function Home() {
 
               {/* Rotating Ring Effect */}
               <motion.div
-                className="absolute inset-0 w-[320px] h-[320px] md:w-[400px] md:h-[400px] rounded-full border border-blue-500/20"
+                className="absolute inset-0 rounded-full border border-blue-500/20"
                 style={{ transform: 'translateZ(50px)' }}
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
