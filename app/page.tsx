@@ -18,7 +18,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="min-h-screen flex flex-col justify-center relative pt-20 px-6">
+      <section className="min-h-screen flex flex-col justify-center relative pt-20 px-4 sm:px-6">
         <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-6xl mx-auto relative z-10 gap-12">
           {/* Left: Content */}
           <motion.div style={{ opacity, y }} className="md:basis-[70%] basis-full text-left">
@@ -28,7 +28,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="mb-6"
             >
-              <h1 className="text-6xl md:text-7xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-300 to-gray-500">
+              <h1 className="text-[2.65rem] min-[375px]:text-5xl sm:text-6xl md:text-7xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-300 to-gray-500">
                 Harsh Vaishnani
               </h1>
             </motion.div>
@@ -39,7 +39,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="mb-6"
             >
-              <p className="text-2xl md:text-3xl text-gray-300 font-light">
+              <p className="text-lg sm:text-2xl md:text-3xl text-gray-300 font-light">
                 MERN Stack & Shopify Developer
               </p>
             </motion.div>
@@ -48,7 +48,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-lg text-gray-400 mb-12 max-w-2xl leading-relaxed"
+              className="text-base sm:text-lg text-gray-400 mb-12 max-w-2xl leading-relaxed"
             >
               Building scalable, performance-optimized web applications and e-commerce solutions.
               Passionate about clean code, modern technologies, and delivering exceptional user experiences.
@@ -60,20 +60,20 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.8 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Link href="/projects">
+              <Link href="/projects" className="w-full sm:w-auto">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all"
+                  className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all"
                 >
                   View My Work
                 </motion.button>
               </Link>
-              <Link href="/contact">
+              <Link href="/contact" className="w-full sm:w-auto">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 border border-gray-400 text-gray-300 rounded-lg font-semibold hover:bg-white/5 transition-all"
+                  className="w-full sm:w-auto px-8 py-4 border border-gray-400 text-gray-300 rounded-lg font-semibold hover:bg-white/5 transition-all"
                 >
                   Get In Touch
                 </motion.button>

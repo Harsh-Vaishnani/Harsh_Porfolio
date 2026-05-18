@@ -52,7 +52,7 @@ export default function Skills() {
     <main className="bg-black text-white min-h-screen">
       <Navbar />
 
-      <section className="pt-32 pb-20 px-6">
+      <section className="pt-32 pb-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -60,7 +60,7 @@ export default function Skills() {
             transition={{ duration: 0.8 }}
             className="mb-16"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
               Skills & Technologies
             </h1>
             <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" />
@@ -76,7 +76,7 @@ export default function Skills() {
                 viewport={{ once: true }}
                 className="group"
               >
-                <div className="bg-white/5 border border-white/10 rounded-lg p-8 hover:border-blue-500/50 transition-all h-full hover:bg-white/10">
+                <div className="bg-white/5 border border-white/10 rounded-lg p-4 sm:p-8 hover:border-blue-500/50 transition-all h-full hover:bg-white/10">
                   <div className={`flex items-center gap-3 mb-6`}>
                     <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${category.color}`} />
                     <h2 className="text-2xl font-bold">{category.title}</h2>

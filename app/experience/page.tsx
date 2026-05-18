@@ -53,7 +53,7 @@ export default function Experience() {
     <main className="bg-black text-white min-h-screen">
       <Navbar />
 
-      <section className="pt-32 pb-20 px-6">
+      <section className="pt-32 pb-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -61,7 +61,7 @@ export default function Experience() {
             transition={{ duration: 0.8 }}
             className="mb-16"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
               Experience
             </h1>
             <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" />
@@ -79,15 +79,15 @@ export default function Experience() {
                   viewport={{ once: true }}
                   className="relative"
                 >
-                  <div className="pl-8 border-l-2 border-blue-500/30 hover:border-blue-500 transition-all">
+                  <div className="pl-6 sm:pl-8 border-l-2 border-blue-500/30 hover:border-blue-500 transition-all">
                     <div className="absolute left-0 top-0 -translate-x-[11px] w-5 h-5 rounded-full bg-gradient-to-r from-blue-500 to-purple-500" />
 
-                    <div className="bg-white/5 border border-white/10 rounded-lg p-8 hover:border-blue-500/50 transition-all">
-                      <div className="flex justify-between items-start mb-2">
-                        <h3 className="text-2xl font-bold text-white">{exp.position}</h3>
-                        <span className="text-sm text-blue-400 font-semibold whitespace-nowrap ml-4">{exp.duration}</span>
+                    <div className="bg-white/5 border border-white/10 rounded-lg p-4 sm:p-8 hover:border-blue-500/50 transition-all">
+                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-1 sm:gap-4">
+                        <h3 className="text-xl sm:text-2xl font-bold text-white">{exp.position}</h3>
+                        <span className="text-sm text-blue-400 font-semibold sm:whitespace-nowrap">{exp.duration}</span>
                       </div>
-                      <p className="text-lg text-gray-300 mb-4">{exp.company}</p>
+                      <p className="text-base sm:text-lg text-gray-300 mb-4">{exp.company}</p>
 
                       <ul className="space-y-2">
                         {exp.achievements.map((achievement, idx) => (

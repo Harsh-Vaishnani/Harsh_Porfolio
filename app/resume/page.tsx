@@ -21,16 +21,16 @@ export default function Resume() {
     <main className="bg-black text-white min-h-screen">
       <Navbar />
 
-      <section className="pt-32 pb-20 px-6">
+      <section className="pt-32 pb-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex justify-between items-start mb-12"
+            className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-12"
           >
             <div>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
                 Resume
               </h1>
               <p className="text-gray-400 text-lg">Download or view my professional resume</p>
@@ -40,7 +40,7 @@ export default function Resume() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleDownload}
-              className="px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all whitespace-nowrap"
+              className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all whitespace-nowrap text-center"
             >
               Download PDF
             </motion.button>
@@ -87,7 +87,7 @@ export default function Resume() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-white/5 border border-white/10 rounded-lg p-8"
+              className="bg-white/5 border border-white/10 rounded-lg p-4 sm:p-8"
             >
               <h3 className="text-2xl font-bold mb-4 text-blue-400">Professional Summary</h3>
               <p className="text-gray-300 leading-relaxed">
@@ -103,7 +103,7 @@ export default function Resume() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-white/5 border border-white/10 rounded-lg p-8"
+              className="bg-white/5 border border-white/10 rounded-lg p-4 sm:p-8"
             >
               <h3 className="text-2xl font-bold mb-6 text-blue-400">Experience</h3>
               <div className="space-y-8">
@@ -126,12 +126,12 @@ export default function Resume() {
                     transition={{ duration: 0.5, delay: idx * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <div className="flex justify-between items-start mb-2">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-1 sm:gap-4">
                       <div>
                         <p className="text-xl font-bold text-white">{exp.title}</p>
                         <p className="text-gray-400">{exp.company}</p>
                       </div>
-                      <span className="text-sm text-blue-400 whitespace-nowrap ml-4">{exp.period}</span>
+                      <span className="text-sm text-blue-400 sm:whitespace-nowrap">{exp.period}</span>
                     </div>
                   </motion.div>
                 ))}
@@ -144,7 +144,7 @@ export default function Resume() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-white/5 border border-white/10 rounded-lg p-8"
+              className="bg-white/5 border border-white/10 rounded-lg p-4 sm:p-8"
             >
               <h3 className="text-2xl font-bold mb-6 text-blue-400">Technical Skills</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -186,7 +186,7 @@ export default function Resume() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-white/5 border border-white/10 rounded-lg p-8"
+              className="bg-white/5 border border-white/10 rounded-lg p-4 sm:p-8"
             >
               <h3 className="text-2xl font-bold mb-6 text-blue-400">Education</h3>
               <div className="space-y-4">
@@ -215,7 +215,7 @@ export default function Resume() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="text-center bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-lg p-8"
+              className="text-center bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-lg p-4 sm:p-8"
             >
               <p className="text-gray-400 mb-4">Want to discuss opportunities?</p>
               <Link href="/contact">

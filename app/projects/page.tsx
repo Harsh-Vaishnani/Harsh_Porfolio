@@ -91,7 +91,7 @@ export default function Projects() {
     <main className="bg-black text-white min-h-screen">
       <Navbar />
 
-      <section className="pt-32 pb-20 px-6">
+      <section className="pt-32 pb-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -99,7 +99,7 @@ export default function Projects() {
             transition={{ duration: 0.8 }}
             className="mb-16"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
               Featured Projects
             </h1>
             <p className="text-gray-400 text-lg">Showcasing my best work across MERN Stack and Shopify e-commerce solutions</p>
