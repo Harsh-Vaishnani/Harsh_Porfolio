@@ -18,7 +18,21 @@ export async function POST(request) {
     const user = process.env.EMAIL_USER
     const pass = process.env.EMAIL_PASS
 
-    if (!user || !pass) {
+    const isPlaceholder = !pass || pass === 'your_gmail_app_password_here' || pass.includes('placeholder')
+
+    if (!user || isPlaceholder) {
+      if (process.env.NODE_ENV === 'development') {
+        console.log('==========================================================')
+        console.log('📬 DEVELOPMENT MODE: SIMULATED CONTACT FORM SUBMISSION')
+        console.log(`From: ${name} (${email})`)
+        console.log(`Subject: ${subject}`)
+        console.log(`Message: ${message}`)
+        console.log('==========================================================')
+        return Response.json(
+          { message: 'Message sent successfully (Simulated)' },
+          { status: 200 }
+        )
+      }
       return Response.json({ error: 'Email credentials not set' }, { status: 500 })
     }
 
@@ -45,6 +59,22 @@ export async function POST(request) {
       )
     } catch (err) {
       console.error('Error sending email:', err)
+      
+      // Fallback in development mode
+      if (process.env.NODE_ENV === 'development') {
+        console.log('==========================================================')
+        console.log('⚠️ GMAIL AUTHENTICATION FAILED (Invalid credentials in .env.local)')
+        console.log('📬 FALLING BACK TO SIMULATED CONTACT FORM SUBMISSION')
+        console.log(`From: ${name} (${email})`)
+        console.log(`Subject: ${subject}`)
+        console.log(`Message: ${message}`)
+        console.log('==========================================================')
+        return Response.json(
+          { message: 'Message sent successfully (Simulated due to SMTP error)' },
+          { status: 200 }
+        )
+      }
+
       return Response.json(
         { error: 'Failed to send email' },
         { status: 500 }
