@@ -50,7 +50,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-lg text-gray-400 mb-12 max-w-2xl leading-relaxed"
             >
-              Building scalable, performance-optimized web applications and e-commerce solutions. 
+              Building scalable, performance-optimized web applications and e-commerce solutions.
               Passionate about clean code, modern technologies, and delivering exceptional user experiences.
             </motion.p>
 
@@ -93,7 +93,7 @@ export default function Home() {
               </div>
               {/* Animated Backgrounds */}
               <motion.div
-                className="absolute top-1/4 left-1/4 w-60 h-60 md:w-96 md:h-96 bg-blue-500/20 rounded-full blur-3xl" 
+                className="absolute top-1/4 left-1/4 w-60 h-60 md:w-96 md:h-96 bg-blue-500/20 rounded-full blur-3xl"
                 style={{ transform: 'translateZ(-60px)' }}
                 animate={{
                   x: [0, 30, -30, 0],
@@ -107,7 +107,7 @@ export default function Home() {
                 }}
               />
               <motion.div
-                className="absolute bottom-1/4 right-1/4 w-60 h-60 md:w-96 md:h-96 bg-purple-500/10 rounded-full blur-3xl" 
+                className="absolute bottom-1/4 right-1/4 w-60 h-60 md:w-96 md:h-96 bg-purple-500/10 rounded-full blur-3xl"
                 style={{ transform: 'translateZ(-50px)' }}
                 animate={{
                   x: [0, -40, 40, 0],

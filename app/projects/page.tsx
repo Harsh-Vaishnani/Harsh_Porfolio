@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 
 export default function Projects() {
-  const [hoveredProject, setHoveredProject] = useState(null)
+  const [hoveredProject, setHoveredProject] = useState<number | null>(null)
 
   const projects = [
     {
@@ -37,15 +37,7 @@ export default function Projects() {
       live: 'https://kabcopro.com',
       features: ['Product Management', 'Cart & Checkout', 'Custom Sections', 'Performance Optimized'],
     },
-    {
-      id: 4,
-      title: 'BOOKshelf - React Web App',
-      year: '2024',
-      description: 'A book discovery platform with cart and wishlist functionality, modern UI, and smooth interactions.',
-      tech: ['React.js', 'JavaScript ES6+', 'React Router', 'LocalStorage', 'Tailwind CSS'],
-      live: 'https://bookshelf-website-three.vercel.app',
-      features: ['Add to Cart', 'Wishlist', 'Product Filtering', 'Responsive Design'],
-    },
+
     {
       id: 5,
       title: 'Finance & Tax Website',
@@ -63,6 +55,15 @@ export default function Projects() {
       tech: ['HTML5', 'CSS3', 'Bootstrap', 'Media Queries', 'JavaScript'],
       live: 'https://my-website-herbcraft.vercel.app',
       features: ['Responsive Design', 'Media Queries', 'Modern Layout', 'Competition Winner'],
+    },
+        {
+      id: 4,
+      title: 'BOOKshelf - React Web App',
+      year: '2023',
+      description: 'A book discovery platform with cart and wishlist functionality, modern UI, and smooth interactions.',
+      tech: ['React.js', 'JavaScript ES6+', 'React Router', 'LocalStorage', 'Tailwind CSS'],
+      live: 'https://bookshelf-website-three.vercel.app',
+      features: ['Add to Cart', 'Wishlist', 'Product Filtering', 'Responsive Design'],
     },
   ]
 

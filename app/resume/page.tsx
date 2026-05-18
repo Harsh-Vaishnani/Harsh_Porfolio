@@ -4,6 +4,7 @@ import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { Mail, Phone, MapPin } from 'lucide-react'
 
 export default function Resume() {
   const handleDownload = () => {
@@ -62,12 +63,21 @@ export default function Resume() {
             >
               <h2 className="text-3xl font-bold mb-2">HARSH VAISHNANI</h2>
               <p className="text-xl text-blue-400 mb-4">MERN Stack & Shopify Developer</p>
-              <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
-                <span>📧 vaishnaniharsh8@gmail.com</span>
-                <span>•</span>
-                <span>📱 +91 8849862777</span>
-                <span>•</span>
-                <span>📍 Ahmedabad, Gujarat</span>
+              <div className="flex flex-wrap justify-center items-center gap-6 text-sm text-gray-300">
+                <a href="mailto:vaishnaniharsh8@gmail.com" className="flex items-center gap-2 hover:text-blue-400 transition-colors">
+                  <Mail size={16} className="text-blue-400" />
+                  <span>vaishnaniharsh8@gmail.com</span>
+                </a>
+                <span className="hidden md:inline text-gray-600">•</span>
+                <a href="tel:+918849862777" className="flex items-center gap-2 hover:text-blue-400 transition-colors">
+                  <Phone size={16} className="text-blue-400" />
+                  <span>+91 8849862777</span>
+                </a>
+                <span className="hidden md:inline text-gray-600">•</span>
+                <div className="flex items-center gap-2">
+                  <MapPin size={16} className="text-blue-400" />
+                  <span>Ahmedabad, Gujarat</span>
+                </div>
               </div>
             </motion.div>
 

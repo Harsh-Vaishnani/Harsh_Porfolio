@@ -150,8 +150,8 @@ export default function Experience() {
             className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-white/5 border border-white/10 rounded-lg p-8"
           >
             {[
-              { label: 'Years in Development', value: '2+' },
-              { label: 'Projects Delivered', value: '15+' },
+              { label: 'Years in Development', value: '4+' },
+              { label: 'Projects Delivered', value: '19+' },
               { label: 'Technologies Mastered', value: '25+' },
             ].map((metric, index) => (
               <motion.div
