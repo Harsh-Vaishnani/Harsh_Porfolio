@@ -112,9 +112,6 @@ export default function Footer() {
             className="text-center text-gray-500 text-sm"
           >
             <p>© {currentYear} Harsh Vaishnani. All rights reserved.</p>
-            <p className="mt-2">
-              Designed & Built with React, Next.js, and Tailwind CSS
-            </p>
           </motion.div>
         </div>
       </div>

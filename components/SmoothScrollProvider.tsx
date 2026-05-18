@@ -6,10 +6,8 @@ export default function SmoothScrollProvider({ children }: { children: React.Rea
   useEffect(() => {
     const lenis = new Lenis({
       lerp: 0.1,
-      smooth: true,
-      direction: 'vertical',
+      orientation: 'vertical',
       gestureOrientation: 'vertical',
-      smoothTouch: false,
       touchMultiplier: 1.5,
     });
 
@@ -19,8 +17,30 @@ export default function SmoothScrollProvider({ children }: { children: React.Rea
     }
     requestAnimationFrame(raf);
 
+    // Auto-hide scrollbar logic
+    let scrollTimeout: NodeJS.Timeout;
+
+    // Show scrollbar briefly on page load
+    document.documentElement.classList.add('is-scrolling');
+    scrollTimeout = setTimeout(() => {
+      document.documentElement.classList.remove('is-scrolling');
+    }, 2000);
+
+    const handleScroll = () => {
+      document.documentElement.classList.add('is-scrolling');
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        document.documentElement.classList.remove('is-scrolling');
+      }, 2000);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    lenis.on('scroll', handleScroll);
+
     return () => {
       lenis.destroy();
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(scrollTimeout);
     };
   }, []);
 

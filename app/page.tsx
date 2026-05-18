@@ -149,9 +149,9 @@ export default function Home() {
       <section className="py-20 px-6 bg-gradient-to-b from-black to-gray-950 border-t border-white/10">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { label: 'Projects Completed', value: '15+' },
+            { label: 'Projects Completed', value: '19+' },
             { label: 'Technologies', value: '25+' },
-            { label: 'Years Experience', value: '3+' },
+            { label: 'Years Experience', value: '4+' },
           ].map((stat, index) => (
             <motion.div
               key={index}
